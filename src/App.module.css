@@ -8,7 +8,7 @@
 	background-color: rgb(223, 227, 232);
 }
 
-.appHeader {
+/* .appHeader {
 	background-color: #282c34;
 	min-height: 100vh;
 	display: flex;
@@ -17,26 +17,15 @@
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
 	color: white;
-}
+} */
 
-.counter {
+/* .counter {
 	color: blueviolet;
 }
 
 .errorLabel {
 	color: red;
-}
-
-.todo {
-	padding: 10px;
-	border-bottom: 1px solid black;
-}
-
-.checkbox {
-	width: 20px;
-	height: 20px;
-	margin: 0 10px 0 0;
-}
+} */
 
 .loadingLabel {
 	position: fixed;
