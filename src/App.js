@@ -1,5 +1,5 @@
-// Задание 1.  (вариант 2) (5. Запросы к серверу)
-// JSON Server
+// Задание 1.  (вариант 3) (5. Запросы к серверу)
+// FireBase
 
 import { useEffect, useState } from "react";
 import { Todo, ControlPanel } from "./components";
@@ -28,17 +28,21 @@ export const App = () => {
 	const onTodoSave = (todoId) => {
 		const { title, completed } = findTodo(todos, todoId) || {};
 		if (todoId === NEW_TODO_ID) {
-			createTodo({ title, completed }).then((todo) => {
+			createTodo({ title, completed }).then((id) => {
 				let updatedTodos = setTodoInTodos(todos, {
 					id: NEW_TODO_ID,
 					isEditing: false,
 				});
 				updatedTodos = removeTodoInTodos(updatedTodos, NEW_TODO_ID);
-				updatedTodos = addTodoInTodos(updatedTodos, todo);
+				updatedTodos = addTodoInTodos(updatedTodos, {
+					id,
+					title,
+					completed,
+				});
 				setTodos(updatedTodos);
 			});
 		} else {
-			updateTodo({ id: todoId, title }).then(() => {
+			updateTodo({ id: todoId, title, completed }).then(() => {
 				setTodos(
 					setTodoInTodos(todos, { id: todoId, isEditing: false }),
 				);
@@ -51,7 +55,8 @@ export const App = () => {
 	};
 
 	const onTodoCompletedChange = (id, newCompleted) => {
-		updateTodo({ id, completed: newCompleted }).then(() => {
+		const { title } = findTodo(todos, id) || {};
+		updateTodo({ id, title, completed: newCompleted }).then(() => {
 			setTodos(setTodoInTodos(todos, { id, completed: newCompleted }));
 		});
 	};

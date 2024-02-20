@@ -1,24 +1,24 @@
 {
-  "todos": [
-    {
-      "id": 0,
-      "title": "Абра кодабра , сим салабим, ахмалах чапалах",
-      "completed": false
-    },
-    {
-      "id": 1,
-      "title": "Ахалай махалай, иди в поле и гуляй",
-      "completed": false
-    },
-    {
-      "title": "Новое дело 3 прибавить додела",
-      "completed": false,
-      "id": 2
-    },
-    {
-      "title": "АААА",
-      "completed": false,
-      "id": 3
-    }
-  ]
+	"todos": [
+		{
+			"id": 0,
+			"title": "Первое дело 1",
+			"completed": false
+		},
+		{
+			"id": 1,
+			"title": "Второе дело 2",
+			"completed": false
+		},
+		{
+			"title": "Новое дело 3 прибавить додела",
+			"completed": false,
+			"id": 2
+		},
+		{
+			"title": "Разбобраться с FireBase",
+			"completed": false,
+			"id": 3
+		}
+	]
 }
